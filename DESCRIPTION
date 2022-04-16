@@ -1,9 +1,11 @@
 Package: hillysilly
-Title: What the Package Does (One Line, Title Case)
+Title: Get and Plot Elevation Unrealistically for Places
 Version: 0.0.0.9000
 Authors@R: 
     person("Michael D.", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Get raster elevation data for a set of addresses and plot it in a
+ tiled arrangement. The idea is to see how "hilly" your city is. Might have 
+ more general uses. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es

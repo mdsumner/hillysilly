@@ -30,6 +30,12 @@ discrete_rainbow <- khroma::colour("discrete rainbow")
 
 #' Plot silly hilly
 #'
+#' A set of input locations is derived from addresses (or placenames) in 'x'.
+#'
+#' Each location is used to get elevation data in a matrix with 'dimension'
+#' for a region around the point of 'width'. These are plotted in a purely
+#' graphic space, with a tiling depending on how many addresses are input.
+#' Set the dimension of 'x' to specify the tiling layout, i.e. with 'matrix(x,)'.
 #' @param x place names, addresses to be geocoded
 #' @param dimension size of tiles (number of pixels each side) 1 number (will be repeated) or 2
 #' @param width width (and height) of tiles in metres, 1 number (will be repeated) or 2
@@ -47,12 +53,16 @@ discrete_rainbow <- khroma::colour("discrete rainbow")
 #' @importFrom memoise memoize
 #' @importFrom vapour vapour_warp_raster_dbl
 #' @examples
-#' hillysilly(c("Hobart", "Melbourne", "Sydney", "Brisbane", "Darwin", "Perth", "Adelaide", "Canberra"))
+#' x <- c("Hobart", "Melbourne", "Sydney", "Brisbane", "Darwin", "Perth",
+#' "Adelaide", "Canberra")
+#' hillysilly(matrix(x, 2L))
 hillysilly <- function(x = "Auckland",
                        dimension = 512,
                        width = 5000, ..., triangles = TRUE, alpha = 0.72) {
 
-  locs <- get_locs(x)  ## we could pass this data.frame in, with colours and so forth
+  addresses <- as.vector(x)
+  addresses <- addresses[nchar(addresses) > 0] ## we might pad out the matrix
+  locs <- get_locs(addresses)  ## we could pass this data.frame in, with colours and so forth
 
   dimension <- rep(dimension, length.out = 2L)
   width <- rep(width, length.out = 2L)

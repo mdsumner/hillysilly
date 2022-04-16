@@ -30,8 +30,16 @@ hillysilly(
 nothing, use for side-effect of a 3D plot
 }
 \description{
-Plot silly hilly
+A set of input locations is derived from addresses (or placenames) in 'x'.
+}
+\details{
+Each location is used to get elevation data in a matrix with 'dimension'
+for a region around the point of 'width'. These are plotted in a purely
+graphic space, with a tiling depending on how many addresses are input.
+Set the dimension of 'x' to specify the tiling layout, i.e. with 'matrix(x,)'.
 }
 \examples{
-hillysilly(c("Hobart", "Melbourne", "Sydney", "Brisbane", "Darwin", "Perth", "Adelaide", "Canberra"))
+x <- c("Hobart", "Melbourne", "Sydney", "Brisbane", "Darwin", "Perth",
+"Adelaide", "Canberra")
+hillysilly(matrix(x, 2L))
 }
