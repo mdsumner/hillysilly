@@ -19,3 +19,5 @@ Imports:
     tidygeocoder,
     vapour (>= 0.8.5)
 Remotes: hypertidy/anglr
+URL: https://github.com/mdsumner/hillysilly
+BugReports: https://github.com/mdsumner/hillysilly/issues
