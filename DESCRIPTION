@@ -1,0 +1,21 @@
+Package: hillysilly
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Michael D.", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    anglr,
+    grDevices,
+    khroma,
+    memoise,
+    raster,
+    rgl,
+    tidygeocoder,
+    vapour (>= 0.8.5)
+Remotes: hypertidy/anglr
